@@ -15,7 +15,7 @@
 .content__wrapper {
   width: 70%;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -53,6 +53,7 @@
   }
 }
 .content-field {
+  z-index: 1;
   width: 100%;
   padding: 5px 0 0 5px;
   // transform: translate(50%, 50%);
@@ -72,6 +73,7 @@
   }
 }
 .content__button {
+  z-index: 1;
   height: 70px;
   width: 100%;
   background: #c6f1e7;
@@ -86,11 +88,28 @@
     transition: background-color 0.5s;
   }
 }
+
+@keyframes showingField {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  70% {
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .content__formated {
   margin-top: 20px;
   background-color: #fff;
   min-height: 200px;
+  max-height: 300px;
+  overflow: auto;
   width: 100%;
+  animation: showingField 0.7s ease-in-out;
 }
 
 button {
